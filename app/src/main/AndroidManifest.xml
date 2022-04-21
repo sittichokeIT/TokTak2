@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TokTak2">
         <activity
+            android:name=".ProfileSetting"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name=".FullVideo"
             android:exported="false" />
         <activity

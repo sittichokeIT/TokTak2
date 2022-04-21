@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         //handle click
         addVideoBtn.setOnClickListener(view -> {
             //start activity to add videos
-            startActivity(new Intent(MainActivity.this,UploadVideo.class));
+            startActivity(new Intent(MainActivity.this,Profile.class));
         });
     }
 
