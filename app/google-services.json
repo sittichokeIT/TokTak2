@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529775829123",
+    "project_id": "toktak2-e407e",
+    "storage_bucket": "toktak2-e407e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529775829123:android:4ea3bfe20669369520bbb6",
+        "android_client_info": {
+          "package_name": "th.ac.kmutnb.toktak2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529775829123-kf3o36o851di6v3tsitbklcjmpkeqkoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAytYqRUd_HYB2JaCzSkA_6NsRGU4139rY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529775829123-kf3o36o851di6v3tsitbklcjmpkeqkoi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

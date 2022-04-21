@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:padding="10dp"
+    tools:context=".UploadVideo">
+    <!--Video title-->
+    <EditText
+        android:id="@+id/titleEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:hint="Enter Title"
+        android:inputType="textPersonName|textCapSentences"
+        android:padding="10dp"
+        android:textColor="@color/black"/>
+
+    <!--Video-->
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_below="@id/titleEt"
+        android:layout_marginTop="5dp"/>
+
+    <!--Video description-->
+    <EditText
+        android:id="@+id/desEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/videoView"
+        android:background="@color/white"
+        android:hint="Enter Description"
+        android:inputType="textPersonName|textCapSentences"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"/>
+
+    <!--Button: upload video-->
+    <Button
+        android:id="@+id/uploadVideoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desEt"
+        android:layout_marginTop="5dp"
+        android:text="Upload Video"
+        android:background="@color/design_default_color_on_primary"
+        android:textColor="@color/white"/>
+
+    <!--FAB: pick video-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pickVideoFab"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_pick_video_white"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>
