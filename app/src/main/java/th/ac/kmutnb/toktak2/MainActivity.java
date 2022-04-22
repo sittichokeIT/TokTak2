@@ -48,10 +48,16 @@ public class MainActivity extends AppCompatActivity {
         //function call. load videos
         loadVideosFromFirebase();
 
-        //handle click
+        //if login true run this
+//        addVideoBtn.setOnClickListener(view -> {
+//            //start activity to add videos
+//            startActivity(new Intent(MainActivity.this,Profile.class));
+//        });
+
+        //if login false run this
         addVideoBtn.setOnClickListener(view -> {
             //start activity to add videos
-            startActivity(new Intent(MainActivity.this,Profile.class));
+            startActivity(new Intent(MainActivity.this,Login.class));
         });
     }
 
