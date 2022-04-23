@@ -4,28 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/form.xml" value="0.2555" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/form_con.xml" value="0.1515" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/rounded_button.xml" value="0.2555" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/rounded_button_R.xml" value="0.1" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/rounded_button_Y.xml" value="0.2555" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/rounded_button_nocolor.xml" value="0.1455" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/rounded_g_button.xml" value="0.2555" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/rounded_r_button.xml" value="0.1515" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/rounded_y_button.xml" value="0.121" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/drawable/setting_form.xml" value="0.2555" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1606425702811245" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1875" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_comfirm_logout.xml" value="0.25" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_full_video.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_profile_setting.xml" value="0.264" />
-        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_register.xml" value="0.34149326805385555" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/activity_upload_video.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/layout_navigation_header.xml" value="0.25" />
         <entry key="..\:/Users/Nitro/AndroidStudioProjects/TokTak2/app/src/main/res/layout/row_video.xml" value="0.22826086956521738" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/activity_full_video.xml" value="0.17831813576494426" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/activity_profile.xml" value="0.358695652173913" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/activity_profile_setting.xml" value="0.33" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/activity_register.xml" value="0.358695652173913" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/activity_upload_video.xml" value="0.17831813576494426" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/layout_navigation_header.xml" value="0.358695652173913" />
         <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/row_video.xml" value="0.17831813576494426" />
-        <entry key="..\:/projectandroidstudio/TokTak2/app/src/main/res/layout/row_video2.xml" value="0.278125" />
       </map>
     </option>
   </component>

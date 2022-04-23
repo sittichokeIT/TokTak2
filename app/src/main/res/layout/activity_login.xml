@@ -6,23 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
-    <EditText
-        android:id="@+id/LogPas"
-        android:layout_width="248dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/form"
-        android:ems="10"
-        android:hint="Password"
-
-        android:inputType="textPersonName"
-
-        android:paddingLeft="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -30,6 +13,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
         android:text="Password"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LogUsername" />
 
@@ -40,6 +24,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="28dp"
         android:text="Username"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -59,12 +44,13 @@
 
     <Button
         android:id="@+id/loginBtn"
-        android:layout_width="129dp"
-        android:layout_height="48dp"
+        android:layout_width="154dp"
+        android:layout_height="49dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/rounded_button"
         android:onClick="gologin"
         android:text="LOGIN"
+        android:textSize="18sp"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,13 +61,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="297dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="56dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:onClick="regis"
         android:text="Register"
         android:textColor="#2196F3"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +81,7 @@
         android:layout_marginStart="188dp"
         android:layout_marginTop="16dp"
         android:text="Login"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toktak2" />
 
@@ -111,4 +99,18 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <EditText
+        android:id="@+id/LogPas"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 </androidx.constraintlayout.widget.ConstraintLayout>

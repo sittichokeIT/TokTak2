@@ -14,6 +14,9 @@
         android:theme="@style/Theme.TokTak2"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ComfirmLogout"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
