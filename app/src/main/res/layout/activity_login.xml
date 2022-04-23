@@ -58,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/loginBtn"
         android:layout_width="129dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
@@ -79,7 +79,7 @@
         android:layout_marginEnd="56dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        android:onClick="goReg"
+        android:onClick="regis"
         android:text="Register"
         android:textColor="#2196F3"
         app:layout_constraintEnd_toEndOf="parent"

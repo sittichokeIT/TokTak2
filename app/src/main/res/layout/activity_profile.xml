@@ -71,7 +71,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:minHeight="48dp"
-        android:onClick="gosetting"
+        android:onClick="goSetting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_person_24" />
@@ -89,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
+
     </ScrollView>
 
 

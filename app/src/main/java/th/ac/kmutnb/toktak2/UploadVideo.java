@@ -10,14 +10,17 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +28,12 @@ import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -35,7 +44,11 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class UploadVideo extends AppCompatActivity {
 
@@ -56,8 +69,15 @@ public class UploadVideo extends AppCompatActivity {
     private Uri videoUri = null;
     private String title;
     private String descript;
+    private String usernames;
 
     private ProgressDialog progressDialog;
+    private String Token;
+
+    private static final String TAG = "my_app";
+    private RequestQueue mQueue;
+
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +107,10 @@ public class UploadVideo extends AppCompatActivity {
         //camera permissions
         camaraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
+        sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+        Token = sp.getString("Token", "");
+        Log.i(TAG,Token);
+
         //upload video
         uploadVideoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +138,43 @@ public class UploadVideo extends AppCompatActivity {
             }
         });
 
+    }
 
+    public void authToken(String url){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i(TAG,response);
+                String username = null;
+                try{
+                    JSONObject jsonObject = new JSONObject(response);
+                    username = jsonObject.getString("username");
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+                if(username!=null){
+                    usernames = username;
+                }else{
+                    Toast.makeText(UploadVideo.this, "null", Toast.LENGTH_SHORT).show();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //Error handling
+                        Log.i(TAG,"onErrorResponse(): " + error.getMessage());
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("token",Token);
+                return params;
+            }
+        };
+        mQueue = Volley.newRequestQueue(this);
+        mQueue.add(stringRequest);
     }
 
     private void uploadVideoFirebase() {
@@ -126,7 +186,8 @@ public class UploadVideo extends AppCompatActivity {
 
         //file path and name in firebase storage
         String filePathAndName = "Videos/" + "video_" + timestamp;
-
+        String username = null;
+        authToken("http://192.168.56.1:4000/api/users/verifytoken");
         //storage reference
         StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
         //upload video, you can upload any type of file using this method :)
@@ -143,7 +204,7 @@ public class UploadVideo extends AppCompatActivity {
 
                             //now we can add video details to our firebase db
                             HashMap<String,Object> hashMap = new HashMap<>();
-                            hashMap.put("id", "" + timestamp);
+                            hashMap.put("id", "" + usernames);
                             hashMap.put("title", "" + title);
                             hashMap.put("description", "" + descript);
                             hashMap.put("timestamp", "" + timestamp);
