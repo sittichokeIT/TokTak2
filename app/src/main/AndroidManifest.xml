@@ -14,9 +14,6 @@
         android:theme="@style/Theme.TokTak2"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".MyList"
-            android:exported="false" />
-        <activity
             android:name=".Register"
             android:exported="false" />
         <activity

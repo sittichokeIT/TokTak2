@@ -12,7 +12,6 @@ import android.widget.Button;
 public class ProfileSetting extends AppCompatActivity {
 
     Button logout ;
-
     SharedPreferences sp;
 
     @Override
@@ -20,16 +19,22 @@ public class ProfileSetting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_setting);
 
-        sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
-        String Token = sp.getString("Token", "");
-        Intent intent = new Intent(this,MainActivity.class);
-        logout = findViewById(R.id.logoutBtn);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sp.edit().remove("Token").commit();
-                startActivity(intent);
-            }
-        });
+//        sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+//        String Token = sp.getString("Token", "");
+//        Intent intent = new Intent(this,MainActivity.class);
+//        logout = findViewById(R.id.logoutBtn);
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                sp.edit().remove("Token").commit();
+//                startActivity(intent);
+//            }
+//        });
     }
+    public void goConfirm(View v){
+        Intent goConfirm = new Intent(this,ComfirmLogout.class);
+        startActivity(goConfirm);
+    }
+
+
 }
