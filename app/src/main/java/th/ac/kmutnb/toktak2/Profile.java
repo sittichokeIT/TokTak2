@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,6 +54,11 @@ public class Profile extends AppCompatActivity {
         startActivity(goSetting);
     }
 
+    public void goList(View v){
+        Intent goList = new Intent(this,MyList.class);
+        startActivity(goList);
+    }
+
     public void loadMyVideo(){
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         DatabaseReference ref = db.child("Videos");
@@ -63,8 +69,8 @@ public class Profile extends AppCompatActivity {
                 for (DataSnapshot ds : task.getResult().getChildren()) {
                     String video = ds.child("videoUrl").getValue(String.class);
                     String title = ds.child("title").getValue(String.class);
-
-
+                    Log.i("url",video);
+                    Log.i("title",title);
                 }
             }
         });
