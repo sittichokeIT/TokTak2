@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -110,5 +111,48 @@ public class ProfileSetting extends AppCompatActivity {
         mQueue.add(stringRequest);
     }
 
+    public void setUsername(View v){
+        EditText newemail = (EditText) findViewById(R.id.setUsername);
+        String newemails = newemail.getText().toString();
+        String Url = "http://192.168.56.1:4000/api/users/update";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i(TAG,response);
+                String msg = null;
+                try{
+                    JSONObject jsonObject = new JSONObject(response);
+                    msg = jsonObject.getString("message");
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+                if(msg.matches("pass")){
+//                    usernames = username;
+//                    namee = (TextView) findViewById(R.id.showname);
+//                    namee.setText(usernames);
+                    Toast.makeText(ProfileSetting.this, "Change Username Success!", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(ProfileSetting.this, "Field", Toast.LENGTH_SHORT).show();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //Error handling
+                        Log.i(TAG,"onErrorResponse(): " + error.getMessage());
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("newemail",newemails);
+                params.put("username",usernames);
+                return params;
+            }
+        };
+        mQueue = Volley.newRequestQueue(this);
+        mQueue.add(stringRequest);
+    }
 
 }

@@ -72,6 +72,7 @@ public class UploadVideo extends AppCompatActivity {
     private String title;
     private String descript;
     private String usernames;
+    private String emails;
 
     private ProgressDialog progressDialog;
     private String Token;
@@ -148,14 +149,15 @@ public class UploadVideo extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.i(TAG,response);
                 String username = null;
+                String email = null;
                 try{
                     JSONObject jsonObject = new JSONObject(response);
-                    username = jsonObject.getString("username");
+                    email = jsonObject.getString("username");
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
                 if(username!=null){
-                    usernames = username;
+                    emails = email;
                 }else{
                     Toast.makeText(UploadVideo.this, "null", Toast.LENGTH_SHORT).show();
                 }
@@ -206,7 +208,7 @@ public class UploadVideo extends AppCompatActivity {
 
                             //now we can add video details to our firebase db
                             HashMap<String,Object> hashMap = new HashMap<>();
-                            hashMap.put("id", "" + usernames);
+                            hashMap.put("id", "" + emails);
                             hashMap.put("title", "" + title);
                             hashMap.put("description", "" + descript);
                             hashMap.put("timestamp", "" + timestamp);
