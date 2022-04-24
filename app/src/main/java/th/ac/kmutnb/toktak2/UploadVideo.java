@@ -187,7 +187,7 @@ public class UploadVideo extends AppCompatActivity {
         //file path and name in firebase storage
         String filePathAndName = "Videos/" + "video_" + timestamp;
         String username = null;
-        authToken("http://192.168.1.41:4000/api/users/verifytoken");
+        authToken("http://192.168.56.1:4000/api/users/verifytoken");
         //storage reference
         StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
         //upload video, you can upload any type of file using this method :)

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class MyList extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    DatabaseReference database,reference;
+    DatabaseReference database;
     MyAdapter myAdapter;
     ArrayList<User> list;
 
@@ -34,53 +34,24 @@ public class MyList extends AppCompatActivity {
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        database = FirebaseDatabase.getInstance().getReference();
-        reference = database.child("Videos");
+
+        database = FirebaseDatabase.getInstance().getReference().child("Videos");
+        Query query = database.orderByChild("id").equalTo("namhom");
 
         list = new ArrayList<>();
         myAdapter = new MyAdapter(this,list);
         recyclerView.setAdapter(myAdapter);
 
-//        Query queryByID = reference.orderByChild("id").equalTo("sit");
-//        queryByID.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DataSnapshot> task) {
-//                for (DataSnapshot ds : task.getResult().getChildren()){
-//
-//                    User user = null;
-//                    user.title = ds.child("title").getValue(String.class);
-//                    user.description = ds.child("description").getValue(String.class);
-//                    list.add(user);
-//
-//
-//                }
-//                myAdapter.notifyDataSetChanged();
-//            }
-//        });
-
-
-
-        reference.addValueEventListener(new ValueEventListener() {
+        query.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-
-                    User user = dataSnapshot.getValue(User.class);
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                for(DataSnapshot ds : task.getResult().getChildren()){
+                    User user = ds.getValue(User.class);
                     list.add(user);
-
-
                 }
                 myAdapter.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
 
     }
 }

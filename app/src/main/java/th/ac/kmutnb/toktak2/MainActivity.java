@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         //if login false run this
         addVideoBtn.setOnClickListener(view -> {
             //start activity to add videos
-            authToken("http://192.168.1.41:4000/api/users/verifytoken",Token);
+            authToken("http://192.168.56.1:4000/api/users/verifytoken",Token);
 //            startActivity(new Intent(MainActivity.this,Login.class));
         });
     }

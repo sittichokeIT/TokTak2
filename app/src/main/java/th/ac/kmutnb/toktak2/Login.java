@@ -42,7 +42,7 @@ public class Login extends AppCompatActivity {
          sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
          String Token = sp.getString("Token", "");
          Log.i(TAG,Token);
-         authToken("http://192.168.1.41:4000/api/users/verifytoken",Token);
+         authToken("http://192.168.56.1:4000/api/users/verifytoken",Token);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void login(String username ,String password ){
-        String url = "http://192.168.1.41:4000/api/users/login";
+        String url = "http://192.168.56.1:4000/api/users/login";
         Intent goMain = new Intent(Login.this,MainActivity.class);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
