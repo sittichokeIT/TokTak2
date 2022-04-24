@@ -18,6 +18,16 @@
         tools:layout_editor_absoluteY="1dp">
 
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="303dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="52dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
@@ -127,20 +137,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
-        <TextView
-            android:id="@+id/toktak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="172dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="181dp"
-            android:text="TokTak"
-            android:textSize="60sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.471"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/registerBtn"
             android:layout_width="150dp"
@@ -159,13 +155,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:text="REGISTER"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toktak" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <TextView
             android:id="@+id/click_regis"
