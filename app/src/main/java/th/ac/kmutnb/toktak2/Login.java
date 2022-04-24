@@ -42,7 +42,7 @@ public class Login extends AppCompatActivity {
          sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
          String Token = sp.getString("Token", "");
          Log.i(TAG,Token);
-         authToken("http://192.168.56.1:4000/api/users/verifytoken",Token);
+         authToken("http://154.202.2.5:4000/api/users/verifytoken",Token);
     }
 
     @Override

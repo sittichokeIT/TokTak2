@@ -41,7 +41,7 @@ public class ProfileSetting extends AppCompatActivity {
     @Override
     protected void onStart() {
 
-        authToken("http://192.168.56.1:4000/api/users/verifytoken");
+        authToken("http://154.202.2.5:4000/api/users/verifytoken");
         super.onStart();
     }
 

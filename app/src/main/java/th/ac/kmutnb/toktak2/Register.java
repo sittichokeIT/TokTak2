@@ -63,7 +63,7 @@ public class Register extends AppCompatActivity {
 
     public void regis(String username, String email,String password,String confirmpassword){
         Intent gologin = new Intent(this,Login.class);
-        String url = "http://192.168.56.1:4000/api/users/store";
+        String url = "http://154.202.2.5:4000/api/users/store";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
