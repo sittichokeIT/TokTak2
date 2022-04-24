@@ -47,6 +47,7 @@ import com.google.firebase.storage.UploadTask;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,6 +68,7 @@ public class UploadVideo extends AppCompatActivity {
 
     private String[] camaraPermissions;
     private Uri videoUri = null;
+    private Uri mVideo = null;
     private String title;
     private String descript;
     private String usernames;
@@ -337,6 +339,10 @@ public class UploadVideo extends AppCompatActivity {
                 videoUri = data.getData();
                 //show picked video in VideoView
                 setVideoToVideoView();
+                //bitmap
+                mVideo = Uri.parse(String.valueOf(videoUri));
+                Log.i("mvideo",String.valueOf(mVideo));
+
             }else if(requestCode ==  VIDEO_PICK_CAMERA_CODE){
                 videoUri = data.getData();
                 //show picked video in VideoView

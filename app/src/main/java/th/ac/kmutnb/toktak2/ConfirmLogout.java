@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ComfirmLogout extends AppCompatActivity {
+public class ConfirmLogout extends AppCompatActivity {
 
     Button logout ;
     SharedPreferences sp;
@@ -17,7 +17,7 @@ public class ComfirmLogout extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comfirm_logout);
+        setContentView(R.layout.activity_confirm_logout);
 
         sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
         String Token = sp.getString("Token", "");
@@ -31,9 +31,9 @@ public class ComfirmLogout extends AppCompatActivity {
             }
         });
     }
-    public void No(View v){
-        Intent No = new Intent(this,ProfileSetting.class);
-        startActivity(No);
-    }
 
+        public void No(View v){
+            Intent No = new Intent(this,ProfileSetting.class);
+            startActivity(No);
+        }
 }
