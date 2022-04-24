@@ -92,7 +92,7 @@ public class Login extends AppCompatActivity {
                         if(msg.matches("User_not_found")){
                             Toast.makeText(Login.this, "User or Password wrong", Toast.LENGTH_SHORT).show();
                         }else if(msg.matches("success")){
-                            Log.i("check","true");
+                            Log.i("checked","true");
                             SharedPreferences.Editor editor = sp.edit();
                             editor.putString("Token",token);
                             editor.commit();
