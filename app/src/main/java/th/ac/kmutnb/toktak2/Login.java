@@ -93,6 +93,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "User or Password wrong", Toast.LENGTH_SHORT).show();
                         }else if(msg.matches("success")){
                             Log.i("checked","true");
+                            Toast.makeText(Login.this, "Welcome to TokTak!", Toast.LENGTH_SHORT).show();
                             SharedPreferences.Editor editor = sp.edit();
                             editor.putString("Token",token);
                             editor.commit();

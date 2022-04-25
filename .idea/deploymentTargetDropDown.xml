@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\DIONIDAS\.android\avd\toktak.avd" />
+            <value value="C:\Users\DIONIDAS\.android\avd\toktak2.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-04-25T06:35:22.113357800Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-04-25T12:03:10.926144100Z" />
   </component>
 </project>

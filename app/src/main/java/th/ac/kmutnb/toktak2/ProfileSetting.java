@@ -135,7 +135,7 @@ public class ProfileSetting extends AppCompatActivity {
 //                    usernames = username;
 //                    namee = (TextView) findViewById(R.id.showname);
 //                    namee.setText(usernames);
-                    Toast.makeText(ProfileSetting.this, "Change Email Success!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileSetting.this, "Change Username Success!", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(ProfileSetting.this, "Field", Toast.LENGTH_SHORT).show();
                 }
