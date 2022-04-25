@@ -35,6 +35,7 @@ public class ProfileSetting extends AppCompatActivity {
     private RequestQueue mQueue;
     SharedPreferences sp;
     private String Token;
+    private String emails = null;
     //
     TextView namee;
 
@@ -78,14 +79,18 @@ public class ProfileSetting extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.i(TAG,response);
                 String username = null;
+                String email =null;
                 try{
                     JSONObject jsonObject = new JSONObject(response);
                     username = jsonObject.getString("username");
+                    email = jsonObject.getString("email");
+
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
                 if(username!=null){
                     usernames = username;
+                    emails = email;
                     namee = (TextView) findViewById(R.id.showname);
                     namee.setText(usernames);
                 }else{
@@ -112,8 +117,8 @@ public class ProfileSetting extends AppCompatActivity {
     }
 
     public void setUsername(View v){
-        EditText newemail = (EditText) findViewById(R.id.setUsername);
-        String newemails = newemail.getText().toString();
+        EditText newuser = (EditText) findViewById(R.id.setUsername);
+        String newusername = newuser.getText().toString();
         String Url = "http://192.168.56.1:4000/api/users/update";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Url, new Response.Listener<String>() {
             @Override
@@ -130,7 +135,7 @@ public class ProfileSetting extends AppCompatActivity {
 //                    usernames = username;
 //                    namee = (TextView) findViewById(R.id.showname);
 //                    namee.setText(usernames);
-                    Toast.makeText(ProfileSetting.this, "Change Username Success!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileSetting.this, "Change Email Success!", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(ProfileSetting.this, "Field", Toast.LENGTH_SHORT).show();
                 }
@@ -146,7 +151,50 @@ public class ProfileSetting extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("newemail",newemails);
+                params.put("email",emails);
+                params.put("newusername",newusername);
+                return params;
+            }
+        };
+        mQueue = Volley.newRequestQueue(this);
+        mQueue.add(stringRequest);
+    }
+
+    public void deleteAccount(View v){
+        String Url = "http://192.168.56.1:4000/api/users/delete";
+        sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+        Intent intent = new Intent(this,MainActivity.class);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i(TAG,response);
+                String msg = null;
+                try{
+                    JSONObject jsonObject = new JSONObject(response);
+                    msg = jsonObject.getString("message");
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+                if(msg.matches("success")){
+                    Log.i("name",usernames);
+                    sp.edit().remove("Token").commit();
+                    Toast.makeText(ProfileSetting.this, "Delete Account Success!", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(ProfileSetting.this, "Field", Toast.LENGTH_SHORT).show();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //Error handling
+                        Log.i(TAG,"onErrorResponse(): " + error.getMessage());
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
                 params.put("username",usernames);
                 return params;
             }

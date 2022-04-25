@@ -10,7 +10,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -22,11 +23,9 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,6 +45,7 @@ public class MyList extends AppCompatActivity {
     private static final String TAG = "myapp";
     public String usernames = null;
     public  String emails = null;
+    public String timestamps = null;
     private RequestQueue mQueue;
     SharedPreferences sp;
     private String Token;
@@ -131,6 +131,7 @@ public class MyList extends AppCompatActivity {
                             for(DataSnapshot ds : task.getResult().getChildren()){
                                 User user = ds.getValue(User.class);
                                 list.add(user);
+
                             }
                             myAdapter.notifyDataSetChanged();
                         }
@@ -157,6 +158,17 @@ public class MyList extends AppCompatActivity {
         };
         mQueue = Volley.newRequestQueue(this);
         mQueue.add(stringRequest);
+    }
+
+    public void deleteVideo(View v){
+
+        EditText timeDel = (EditText) findViewById(R.id.timeDel);
+        String timeDelete = timeDel.getText().toString();
+        Log.i("times",timeDelete);
+        DatabaseReference databaseReference;
+        databaseReference = FirebaseDatabase.getInstance().getReference("Videos").child(timeDelete);
+        databaseReference.removeValue();
+
     }
 
 }

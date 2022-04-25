@@ -18,6 +18,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     ArrayList<User> list;
 
+    String name;
 
     public MyAdapter(Context context, ArrayList<User> list) {
         this.context = context;
@@ -37,7 +38,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         User user = list.get(position);
         holder.title.setText(user.getTitle());
         holder.description.setText(user.getDescription());
-
+        holder.timestamp.setText(user.getTimestamp());
 
     }
 
@@ -48,15 +49,18 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title, description;
+        TextView title, description,timestamp;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.tvfirstName);
             description = itemView.findViewById(R.id.tvlastName);
+            timestamp = itemView.findViewById(R.id.tvtime);
 
         }
     }
+
+
 
 }

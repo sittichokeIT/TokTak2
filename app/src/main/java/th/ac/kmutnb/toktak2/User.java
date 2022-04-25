@@ -1,6 +1,7 @@
 package th.ac.kmutnb.toktak2;
 
 public class User {
+    String title, description,timestamp;
 
     public String getTitle() {
         return title;
@@ -18,5 +19,11 @@ public class User {
         this.description = description;
     }
 
-    String title, description;
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 }
