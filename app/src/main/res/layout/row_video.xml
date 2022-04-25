@@ -44,24 +44,4 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
 
-    <ImageView
-        android:id="@+id/likeBtn"
-        android:layout_width="54dp"
-        android:layout_height="46dp"
-        android:src="@drawable/ic_favorite_white"
-        android:translationX="335dp"
-        android:translationY="400dp"/>
-
-    <TextView
-        android:id="@+id/likeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:translationX="356dp"
-        android:translationY="445dp"/>
-
-
-
 </RelativeLayout>

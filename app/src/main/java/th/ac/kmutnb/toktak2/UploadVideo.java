@@ -152,7 +152,8 @@ public class UploadVideo extends AppCompatActivity {
                 String email = null;
                 try{
                     JSONObject jsonObject = new JSONObject(response);
-                    email = jsonObject.getString("username");
+                    username = jsonObject.getString("username");
+                    email = jsonObject.getString("email");
                 }catch (JSONException e){
                     e.printStackTrace();
                 }

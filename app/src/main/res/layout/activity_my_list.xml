@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Title Video"
+        android:hint="TimeStamp Video"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/delBtn"
         app:layout_constraintEnd_toEndOf="parent"

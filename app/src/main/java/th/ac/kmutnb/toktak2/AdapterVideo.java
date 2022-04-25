@@ -38,11 +38,11 @@ public class AdapterVideo extends RecyclerView.Adapter<AdapterVideo.HolderVideo>
         //Get data
         ModelVideo modelVideo = videoArrayList.get(position);
 
-        String id = modelVideo.getId();
+//        String id = modelVideo.getId();
         String title = modelVideo.getTitle();
         String description = modelVideo.getDescription();
-        String timestamp = modelVideo.getTimestamp();
-        String videoUrl = modelVideo.getVideoUrl();
+//        String timestamp = modelVideo.getTimestamp();
+//        String videoUrl = modelVideo.getVideoUrl();
 
         holder.titleTv.setText(title);
         holder.desTv.setText(description);
@@ -131,8 +131,6 @@ public class AdapterVideo extends RecyclerView.Adapter<AdapterVideo.HolderVideo>
         VideoView videoView;
         TextView titleTv,desTv;
         ProgressBar progressBar;
-        ImageView like_btn;
-        TextView like_text;
 
         public HolderVideo(@NonNull View itemView) {
             super(itemView);
@@ -142,8 +140,6 @@ public class AdapterVideo extends RecyclerView.Adapter<AdapterVideo.HolderVideo>
             titleTv = itemView.findViewById(R.id.titleTv);
             desTv = itemView.findViewById(R.id.desTv);
             progressBar = itemView.findViewById(R.id.progressBar);
-            like_btn = (ImageView) itemView.findViewById(R.id.likeBtn);
-            like_text = (TextView) itemView.findViewById(R.id.likeText);
         }
     }
 }

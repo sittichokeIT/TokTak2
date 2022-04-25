@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfirmLogout">
+    tools:context=".ConfirmDeleteAcc">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/backdel"
         android:layout_width="359dp"
         android:layout_height="256dp"
         android:layout_marginStart="16dp"
@@ -20,18 +20,18 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tvhead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="ต้องการออกจากระบบใช่ไหม"
+        android:text="ต้องการลบบัญชีนี้ช่ไหม"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toTopOf="@+id/backdel" />
 
     <Button
-        android:id="@+id/btnComfirm"
+        android:id="@+id/btnConfirm"
         android:layout_width="123dp"
         android:layout_height="54dp"
         android:layout_marginStart="48dp"
@@ -40,10 +40,10 @@
         android:text="ตกลง"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/tvhead" />
 
     <Button
-        android:id="@+id/btnCancle"
+        android:id="@+id/btnCancle2"
         android:layout_width="119dp"
         android:layout_height="51dp"
         android:layout_marginTop="72dp"
@@ -53,5 +53,5 @@
         android:text="ยกเลิก"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/tvhead" />
 </androidx.constraintlayout.widget.ConstraintLayout>

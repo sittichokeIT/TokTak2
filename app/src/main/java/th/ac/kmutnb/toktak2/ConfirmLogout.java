@@ -1,5 +1,6 @@
 package th.ac.kmutnb.toktak2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -19,8 +20,11 @@ public class ConfirmLogout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_logout);
 
+        //hide actionbar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         sp = this.getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
-        String Token = sp.getString("Token", "");
         Intent intent = new Intent(this,MainActivity.class);
         logout = findViewById(R.id.btnComfirm);
         logout.setOnClickListener(new View.OnClickListener() {

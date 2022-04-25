@@ -168,6 +168,7 @@ public class MyList extends AppCompatActivity {
         DatabaseReference databaseReference;
         databaseReference = FirebaseDatabase.getInstance().getReference("Videos").child(timeDelete);
         databaseReference.removeValue();
+        Toast.makeText(this, "Delete video this" + timeDelete + "success!", Toast.LENGTH_SHORT).show();
 
     }
 
